@@ -5,23 +5,16 @@
 <table>
   <thead>
     <tr>
-      <th>Short</th>
-      <th>Long</th>
       <th>Name</th>
+      <th>Short Runs</th>
+      <th>Long Runs</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @runners.each do |runner| %>
-      <tr>
-        <td><%= runner.short %></td>
-        <td><%= runner.long %></td>
-        <td><%= runner.name %></td>
-        <td><%= link_to 'Show', runner %></td>
-        <td><%= link_to 'Edit', edit_runner_path(runner) %></td>
-        <td><%= link_to 'Destroy', runner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= render partial: "runners/show_runner_partial", locals: {runner: runner} %>
     <% end %>
   </tbody>
 </table>

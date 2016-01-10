@@ -1,0 +1,10 @@
+<h5> Runner's partial </h5>
+<tr>
+  <td><%= runner.name %></td>
+  <td><%= runner.short %></td>
+  <td><%= runner.long %></td>
+  <td><%= button_to "increment", runner_path(runner)+"/increment", method: "patch" %> </td>
+  <td><%= link_to 'Show', runner %></td>
+  <td><%= link_to 'Edit', edit_runner_path(runner) %></td>
+  <td><%= link_to 'Destroy', runner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

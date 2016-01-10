@@ -51,6 +51,13 @@ class RunnersController < ApplicationController
     end
   end
 
+  def increment
+    @runner = Runner.where(id: params[:runner_id]).first
+    if @runner.update({long: @runner.long+1})
+      redirect_to runners_url, notice: "Runner was successfully incremented"
+    end
+  end
+
   # DELETE /runners/1
   # DELETE /runners/1.json
   def destroy
