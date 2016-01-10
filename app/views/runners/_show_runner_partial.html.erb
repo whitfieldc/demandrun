@@ -3,7 +3,12 @@
   <td><%= runner.name %></td>
   <td><%= runner.short %></td>
   <td><%= runner.long %></td>
-  <td><%= button_to "increment", runner_path(runner)+"/increment", method: "patch" %> </td>
+  <td>
+    <%= form_tag(runner, method: "patch") do %>
+        <%= hidden_field_tag("runner[long]", "#{(runner.long+1)}") %>
+        <%= submit_tag("Increment Long Run Count") %>
+    <% end %>
+  </td>
   <td><%= link_to 'Show', runner %></td>
   <td><%= link_to 'Edit', edit_runner_path(runner) %></td>
   <td><%= link_to 'Destroy', runner, method: :delete, data: { confirm: 'Are you sure?' } %></td>

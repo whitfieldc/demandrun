@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :runners do
-    patch "increment", to: "runners#increment"
-  end
+  resources :runners
+  # do
+  #   patch "increment", to: "runners#increment"
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

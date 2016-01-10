@@ -40,21 +40,15 @@ class RunnersController < ApplicationController
   # PATCH/PUT /runners/1
   # PATCH/PUT /runners/1.json
   def update
+    puts params
     respond_to do |format|
       if @runner.update(runner_params)
-        format.html { redirect_to @runner, notice: 'Runner was successfully updated.' }
+        format.html { redirect_to runners_url, notice: 'Runner was successfully updated.' }
         format.json { render :show, status: :ok, location: @runner }
       else
         format.html { render :edit }
         format.json { render json: @runner.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  def increment
-    @runner = Runner.where(id: params[:runner_id]).first
-    if @runner.update({long: @runner.long+1})
-      redirect_to runners_url, notice: "Runner was successfully incremented"
     end
   end
 
