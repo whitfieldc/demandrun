@@ -9,13 +9,13 @@
   <td>
     <%= form_tag(runner, method: "patch") do %>
         <%= hidden_field_tag("runner[short]", "#{(runner.short+1)}") %>
-        <%= submit_tag("Increment Short Run Count") %>
+        <%= submit_tag("+", class: "btn btn-lg btn-warning") %>
     <% end %>
   </td>
   <td>
     <%= form_tag(runner, method: "patch") do %>
         <%= hidden_field_tag("runner[long]", "#{(runner.long+1)}") %>
-        <%= submit_tag("Increment Long Run Count") %>
+        <%= submit_tag("+", class: "btn btn-lg btn-warning") %>
     <% end %>
   </td>
 </tr>

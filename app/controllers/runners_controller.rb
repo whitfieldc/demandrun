@@ -28,7 +28,7 @@ class RunnersController < ApplicationController
 
     respond_to do |format|
       if @runner.save
-        format.html { redirect_to @runner, notice: 'Runner was successfully created.' }
+        format.html { redirect_to runners_url, notice: 'Runner was successfully created.' }
         format.json { render :show, status: :created, location: @runner }
       else
         format.html { render :new }
